@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='OphiUchus.png') }}" type="image/png">
+    <title>About Us</title>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/member1.jpg') }}" alt="Rober B. Bayos Jr." class="profile-pic">
+                <p class="member-name">Roberto B. Bayos Jr.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/berto.bayos" target="_blank">
+                        <img src="{{ url_for('static', filename='images/facebook.jpg') }}" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://github.com/CaseinBrt" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github.jpg') }}" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/member2.jpg') }}" alt="Randolf F. Brigola" class="profile-pic">
+                <p class="member-name">Randolf F. Brigola</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/baron.brigola" target="_blank">
+                        <img src="{{ url_for('static', filename='images/facebook.jpg') }}" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://github.com/randolf99" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github.jpg') }}" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/member3.jpg') }}" alt="Johnben Augustus A. Nadal" class="profile-pic">
+                <p class="member-name">Johnben Augustus A. Nadal</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/johnben.nadal.18" target="_blank">
+                        <img src="{{ url_for('static', filename='images/facebook.jpg') }}" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://github.com/urboyjaybee" target="_blank">
+                        <img src="{{ url_for('static', filename='images/github.jpg') }}" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="about-text-box" style="margin-top: 1cm;">
+            <p>Greetings from Team Ophiuchus! We are a committed group working on a thesis entitled "Comparative Analysis of Image Deblurring Using DeblurGAN for Sharpening Selected and Entire Image Regions."</p>
+            <p>Our research targets a prevalent and unpleasant issue: shooting blurry images. In a world where visual clarity is crucial whether for the use of photography, security, or personal memories, blurry images may disrupt smooth interaction and analysis. With this effort, we hope to provide a solution by leveraging the power of DeblurGAN, built to restore visual clarity.</p>
+            <p>Our thesis investigates and compares the results of deblurring algorithms used on complete images versus chosen parts. Our primary objective is to allow the users to exercise control of their images, resulting in outstanding outcomes even under difficult circumstances.</p>
+            <p>We feel that our research has the potential to have a significant impact, increasing user experience and establishing an example for future advances in image processing. Thank you so much for accompanying us on this voyage!</p>
+        </div>
+        <div class="go-back-button" style="margin-top: 2cm;">
+            <a href="{{ url_for('index') }}" class="button">Go Back to Main Page</a>
+        </div>
+    </div>
+</body>
+</html>

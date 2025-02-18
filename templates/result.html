@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeblurGAN Result</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>DeblurGAN Result</h1>
+        <div class="image-container">
+            <div class="image-wrapper">
+                <h3>Original Image</h3>
+                <div id="canvas-wrapper">
+                    <img id="original-image" src="{{ url_for('uploaded_file', filename=original) }}" alt="Original Image">
+                    <canvas id="selection-canvas"></canvas>
+                </div>
+            </div>
+            
+            <div class="image-wrapper">
+                <h3>Deblurred Image</h3>
+                <img id="deblurred-image" src="{{ url_for('result_file', filename=result) }}" alt="Deblurred Image">
+                <p>PSNR: {{ psnr }}</p>
+                <p>SSIM: {{ ssim }}</p>
+                <a href="{{ url_for('download_file', filename=result) }}" class="download-btn">Download</a>
+            </div>
+            
+            <div id="region-result" style="display: none;">
+                <!-- This will be populated by JavaScript when a region is deblurred -->
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="deblur-selection" class="action-button">Deblur Region</button>
+            <button id="compare-results-btn" class="action-button">Compare Results</button>
+        </div>
+
+        <div id="comparison-result" style="display: none;"></div>
+
+        <button id="go-back" onclick="location.href='/'">Go back</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+

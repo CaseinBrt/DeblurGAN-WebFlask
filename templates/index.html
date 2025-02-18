@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Deblurring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="{{ url_for('static', filename='OphiUchus.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <button id="go-back" class="action-button" style="display: none;">Go Back</button>
+        <h1>Image Deblurring Using DeblurGAN</h1>
+        
+        <!-- Initial upload container - will stay visible -->
+        <div class="upload-container" id="upload-area">
+            <label for="file-input" class="upload-label">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <div class="upload-text">Drag & Drop or Click to Upload</div>
+            </label>
+            <input type="file" id="file-input" accept="image/*" style="display: none;">
+        </div>
+
+        <!-- Processing indicator -->
+        <div class="processing-container" id="processing-indicator">
+            <div class="spinner"></div>
+            <div class="processing-text">Processing... Please wait</div>
+        </div>
+
+        <!-- Results container -->
+        <div class="results-container" id="results-area" style="display: none;">
+            <h2 class="result-title">DeblurGAN Result</h2>
+            
+            <div class="image-grid">
+                <div class="image-panel">
+                    <div class="panel-header">Original Image</div>
+                    <div class="panel-content" id="canvas-wrapper">
+                        <img id="original-image" src="" alt="Original Image">
+                        <canvas id="selection-canvas"></canvas>
+                    </div>
+                </div>
+                
+                <div class="image-panel">
+                    <div class="panel-header">Deblurred Image</div>
+                    <div class="panel-content">
+                        <img id="deblurred-image" src="" alt="Deblurred Image">
+                        <div class="result-info">
+                            <p id="psnr">PSNR: </p>
+                            <p id="ssim">SSIM: </p>
+                            <button class="download-btn" id="download-btn">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add a third panel for region results -->
+                <div class="image-panel" id="region-result" style="display: none;">
+                    <div class="panel-header">Region Result</div>
+                    <div class="panel-content">
+                        <div class="region-placeholder">
+                            <i class="fas fa-crop"></i>
+                            <p>Select a region to deblur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container for comparison results -->
+            <div id="comparison-result" style="display: none;"></div>
+        </div>
+
+        <!-- PSNR Warning Modal -->
+        <div id="psnr-warning-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <p></p>
+                <div class="modal-buttons">
+                    <button id="yes-deblur">Yes</button>
+                    <button id="no-deblur">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{{ url_for('about') }}" class="about-btn" style="font-weight: bold;">About Us</a>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

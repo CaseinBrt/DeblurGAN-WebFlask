@@ -113,3 +113,7 @@ tqdm==4.65.0
 # python test.py --which_epoch latest --dataroot "/home/janadal/DeblurGAN3/Test6" --model test --dataset_mode single --learn_residual --resize_or_crop resize --loadSizeX 1280 --loadSizeY 720
 #python test_select_region.py --which_epoch latest --dataroot "/home/janadal/DeblurGAN3/Test8" --model test --dataset_mode single --learn_residual --resize_or_crop resize --loadSizeX 256 --loadSizeY 256
 'change --loadSizeX 1280 --loadSizeY 720 depends on the image resolution'
+
+
+
+_**"With my other team members [urboyjaybee](https://github.com/urboyjaybee) Johnben Augustus A. Nadal  & https://github.com/randolf99 Randolf F. Brigola"**_
